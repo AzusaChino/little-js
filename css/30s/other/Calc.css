@@ -14,6 +14,6 @@ Browser support
 <div class="box-example"></div>
 */
 .box-example {
-  height: 280px;
-  background: #222 url('https://image.ibb.co/fUL9nS/wolf.png') no-repeat calc(100% - 20px) calc(100% - 20px);
+    height: 280px;
+    background: #222 url('https://image.ibb.co/fUL9nS/wolf.png') no-repeat calc(100% - 20px) calc(100% - 20px);
 }

@@ -30,15 +30,15 @@ Browser support
 
 
 .tiles {
-  width: 900px;
-  font-size: 0;
+    width: 900px;
+    font-size: 0;
 }
 
 .tile {
-  width: calc(900px / 3);
-  display: inline-block;
+    width: calc(900px / 3);
+    display: inline-block;
 }
 
 .tile h2 {
-  font-size: 20px;
+    font-size: 20px;
 }

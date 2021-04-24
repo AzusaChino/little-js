@@ -14,5 +14,5 @@ Browser support
 <p class="unselectable">You can't select me!</p>
 */
 .unselectable {
-  user-select: none;
+    user-select: none;
 }
