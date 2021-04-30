@@ -1,14 +1,17 @@
 const shell = require("shelljs");
 
 var copyFile = () => {
+  // const baseSrc = "E:\\Projects\\project-github\\little-code\\leetcode\\2021\\04";
   const baseSrc =
-    "E:\\Projects\\project-github\\little-code\\leetcode\\2021\\04";
-
+    "E:\\Projects\\project-github\\little-secret\\life\\daily\\2021\\05";
   for (let i = 1; i <= 31; i++) {
     let j = i < 10 ? `0${i}` : i;
-    shell.cp(`${baseSrc}\\template.tmpl`, `${baseSrc}\\${j}.md`);
+    shell.cp(`${baseSrc}\\template.md`, `${baseSrc}\\${j}.md`);
+    shell.sed("-i", "Date", `2021-05-${j}`, `${baseSrc}\\${j}.md`);
   }
 };
+
+copyFile();
 
 var demo = function () {
   if (!shell.which("git")) {
@@ -42,11 +45,12 @@ var demo = function () {
 };
 
 const changeWord = () => {
-  const location = "E:\\Projects\\project-github\\little-go\\examples";
-  shell.cd(location);
-  shell.ls("*.go").forEach((f) => {
-    shell.sed("-i", "main", "init", f);
-  });
+  // const location = "E:\\Projects\\project-github\\little-go\\examples";
+  const loc =
+    "E:\\Projects\\project-github\\little-secret\\life\\daily\\2021\\05";
+  shell.cd(loc);
+  // shell.ls("*.go").forEach((f) => {
+  //   shell.sed("-i", "main", "init", f);
+  // });
+  shell.ls("README.md").forEach((f) => shell.sed("-i", "04", "05", f));
 };
-
-changeWord();
