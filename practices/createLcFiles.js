@@ -31,4 +31,4 @@ const up = (str) => str.slice(0, 1).toUpperCase() + str.slice(1);
 
 const createMayFiles = createFiles("2021", "may");
 
-// createMayFiles("");
+createMayFiles("Find the Shortest Superstring");
