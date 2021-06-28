@@ -32,11 +32,12 @@ const baseReadme = `| Date                        | No  | Level | Tag  | Title  
  | [2021-MM-27](MM/27.md) | 39 | easy  | tree | [title](url) |
  | [2021-MM-28](MM/28.md) | 39 | easy  | tree | [title](url) |
  | [2021-MM-29](MM/29.md) | 39 | easy  | tree | [title](url) |
- | [2021-MM-30](MM/30.md) | 39 | easy  | tree | [title](url) |`;
+ | [2021-MM-30](MM/30.md) | 39 | easy  | tree | [title](url) |
+ | [2021-MM-31](MM/31.md) | 39 | easy  | tree | [title](url) |`;
 
 const baseSrc = `E:\\Projects\\project-github\\little-code\\leetcode`;
 
-const init = (year = `2021`, month = `06`) => {
+const init = (year = `2021`, month = `07`) => {
   const targetSrc = `${baseSrc}\\${year}\\${month}`;
   shellJs.mkdir(targetSrc);
   for (let i = 1; i <= 31; i++) {

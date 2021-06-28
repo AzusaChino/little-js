@@ -7,10 +7,12 @@ const readmeTmpl = "readme.tmpl";
 const init = (
   baseSrc = "E:\\Projects\\project-github\\little-secret\\life\\daily",
   year = `2021`,
-  month = `06`
+  month = `07`
 ) => {
   const templateSrc = `${baseSrc}\\${tmplFolder}`;
   const targetSrc = `${baseSrc}\\${year}\\${month}`;
+  // create target folder
+  shellJs.mkdir(targetSrc);
   // shellJs.cd(templateSrc);
   // copy templates
   shellJs.cp(`${templateSrc}\\${diaryTmpl}`, `${targetSrc}\\${diaryTmpl}`);
