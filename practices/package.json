@@ -4,7 +4,8 @@
   "private": true,
   "dependencies": {
     "shelljs": "^0.8.4",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1"
   },
   "devDependencies": {},
   "scripts": {},
