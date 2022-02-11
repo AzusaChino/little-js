@@ -1,3 +1,4 @@
+const path = require("path");
 const lodash = require("lodash");
 const shellJs = require("shelljs");
 const moment = require("moment");
@@ -37,27 +38,32 @@ const baseReadme = `
  | [2022-MM-30](MM/30.md) | 39 | easy  | tree | [title](url) |
  | [2022-MM-31](MM/31.md) | 39 | easy  | tree | [title](url) |`;
 
-const baseSrc = `E:\\Projects\\project-github\\little-code\\leetcode`;
+const SEP = path.sep;
+
+// 2022.02.11 adapt to the format of mdbook
+const baseSrc = `E:${SEP}Projects${SEP}project-github${SEP}little-code${SEP}src${SEP}leetcode`;
 
 const createLcFiles = (obj) => {
   const { year, month } = obj;
-  const targetSrc = `${baseSrc}\\${year}\\${month}`;
+  const targetSrc = `${baseSrc}${SEP}${year}${SEP}${month}`;
   shellJs.mkdir("-p", targetSrc);
   for (let i = 1; i <= 31; i++) {
     let j = i < 10 ? `0${i}` : i;
     const date_str = `${year}-${month}-${j}`;
     const date = moment(date_str);
     if (date.isValid()) {
-      shellJs.cp(`${baseSrc}\\template\\daily.tmpl`, `${targetSrc}\\${j}.md`);
+      shellJs.cp(
+        `${baseSrc}${SEP}template${SEP}daily.tmpl`,
+        `${targetSrc}${SEP}${j}.md`
+      );
       shellJs.sed(
         "-i",
         "DATE",
         `${year}-${month}-${j}`,
-        `${targetSrc}\\${j}.md`
+        `${targetSrc}${SEP}${j}.md`
       );
     }
   }
-
   console.log(lodash.split(baseReadme, "MM").join(month));
 };
 

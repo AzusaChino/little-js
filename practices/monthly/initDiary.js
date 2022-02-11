@@ -1,24 +1,35 @@
 const shellJs = require("shelljs");
 const moment = require("moment");
+const path = require("path");
+
+const SEP = path.sep;
 
 const tmplFolder = "template";
 const diaryTmpl = "diary.tmpl";
 const readmeTmpl = "readme.tmpl";
-const baseSrc = "E:\\Projects\\project-github\\little-secret\\life\\daily";
+
+// 2022.02.11 adapt to the format of mdbook
+const baseSrc = `E:${SEP}Projects${SEP}project-github${SEP}little-secret${SEP}src${SEP}life${SEP}daily`;
 
 const createDiary = (obj) => {
   const { year, month } = obj;
-  const templateSrc = `${baseSrc}\\${tmplFolder}`;
-  const targetSrc = `${baseSrc}\\${year}\\${month}`;
+  const templateSrc = `${baseSrc}${SEP}${tmplFolder}`;
+  const targetSrc = `${baseSrc}${SEP}${year}${SEP}${month}`;
   // create target folder
   shellJs.mkdir(`-p`, targetSrc);
   // shellJs.cd(templateSrc);
   // copy templates
-  shellJs.cp(`${templateSrc}\\${diaryTmpl}`, `${targetSrc}\\${diaryTmpl}`);
-  shellJs.cp(`${templateSrc}\\${readmeTmpl}`, `${targetSrc}\\README.md`);
+  shellJs.cp(
+    `${templateSrc}${SEP}${diaryTmpl}`,
+    `${targetSrc}${SEP}${diaryTmpl}`
+  );
+  shellJs.cp(
+    `${templateSrc}${SEP}${readmeTmpl}`,
+    `${targetSrc}${SEP}README.md`
+  );
 
-  shellJs.sed("-i", "year", `${year}`, `${targetSrc}\\README.md`);
-  shellJs.sed("-i", "month", `${month}`, `${targetSrc}\\README.md`);
+  shellJs.sed("-i", "year", `${year}`, `${targetSrc}${SEP}README.md`);
+  shellJs.sed("-i", "month", `${month}`, `${targetSrc}${SEP}README.md`);
 
   // init files
   shellJs.cd(targetSrc);
