@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "shelljs": "^0.8.4",
+    "shelljs": "^0.8.5",
     "lodash": "^4.17.21",
     "moment": "^2.29.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/node": "^17.0.22",
+    "jsonwebtoken": "^8.5.1"
+  },
   "scripts": {},
   "eslintConfig": {},
   "browserslist": {
